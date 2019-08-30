@@ -39,7 +39,7 @@ export default class FeatureItem extends React.Component {
             className="feature_option"
             name={this.props.featureName}
             checked={option.name === this.props.selected[this.props.option]}
-            onChange={e => this.props.updateFeature(option, idx)}
+            onChange={e => this.props.handleUpdate(option, idx)}
           ></input>
           <label htmlFor={itemHash} className="feature__label">
             {option.name} ({USCurrencyFormat.format(option.cost)})
