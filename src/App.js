@@ -34,20 +34,20 @@ class App extends Component {
     this.state = {
       selected: {
         Processor: {
-          name: " ",
-          cost: 0
+          name: "17th Generation Intel Core HB (7 Core with donut spare)",
+          cost: 700
         },
         "Operating System": {
-          name: " ",
-          cost: 0
+          name: "Ubuntu Linux 16.04",
+          cost: 200
         },
         "Video Card": {
-          name: " ",
-          cost: 0
+          name: "Toyota Corolla 1.5v",
+          cost: 1150.98
         },
         Display: {
-          name: " ",
-          cost: 0
+          name: '15.6" UHD (3840 x 2160) 60Hz Bright Lights and Knobs',
+          cost: 1500
         }
       }
     };
@@ -59,7 +59,11 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-          <Form features={features} />
+          <Form
+            features={features}
+            selected={this.state.selected}
+            handleUpdate={this.updateFeature}
+          />
           <section className="main__summary">
             {/* <Cart features={this.state.selected} /> */}
             <br />
