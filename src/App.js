@@ -31,6 +31,8 @@ class App extends Component {
   };
   constructor(props) {
     super(props);
+    this.updateFeature = this.updateFeature.bind(this);
+
     this.state = {
       selected: {
         Processor: {
@@ -65,7 +67,7 @@ class App extends Component {
             handleUpdate={this.updateFeature}
           />
           <section className="main__summary">
-            {/* <Cart features={this.state.selected} /> */}
+            {/* <Cart features={features} selected={this.state.selected} /> */}
             <br />
             {/*<Total features={this.state.selected} />*/}
           </section>

@@ -6,13 +6,13 @@ export default class Cart extends React.Component {
     const summary = Object.keys(this.props.selected).map((feature, idx) => {
       const featureHash = feature + "-" + idx;
       const selectedOption = this.props.selected[this.props.feature];
-      return (
-        <div>
-          <h2>Your cart</h2>
-          <Summary />
-        </div>
-      );
     });
+    return (
+      <div>
+        <h2>Your cart</h2>
+        <Summary />
+      </div>
+    );
   }
 }
 

@@ -30,7 +30,7 @@ export default class FeatureItem extends React.Component {
     const options = this.props.options.map((option, idx) => {
       const itemHash = slugify(JSON.stringify(option.name));
       //console.log(onChange);
-
+      //(option, idx)
       return (
         <div key={this.props.idx} className="feature__item">
           <input
@@ -39,7 +39,7 @@ export default class FeatureItem extends React.Component {
             className="feature_option"
             name={this.props.featureName}
             checked={option.name === this.props.selected[this.props.option]}
-            onChange={e => this.props.handleUpdate(option, idx)}
+            onChange={e => this.updateFeature}
           ></input>
           <label htmlFor={itemHash} className="feature__label">
             {option.name} ({USCurrencyFormat.format(option.cost)})

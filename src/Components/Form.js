@@ -16,7 +16,7 @@ export default class Form extends React.Component {
         options={this.props.features[item]}
         idx={idx}
         selected={this.props.selected}
-        handleUpdate={this.props.handleUpdate}
+        handleUpdate={this.updateFeature}
       />
     ));
     return (
