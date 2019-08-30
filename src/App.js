@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Form from "./Components/Form";
 import FEATURES from "./Components/Store";
+import Cart from "./Components/Cart";
 
 class App extends Component {
   constructor(props) {
@@ -48,20 +49,13 @@ class App extends Component {
           <Form
             features={FEATURES}
             selected={this.state.selected}
-            handleUpdate={this.updateFeature}
+            handleUpdate={this.state.updateFeature}
           />
-          {/* ====== CART / SUMMARY / TOTAL ============
-          <section className="main__summary">
-            <h2>Your cart</h2>
-            {summary}
-            <div className="summary__total">
-              <div className="summary__total__label">Total</div>
-              <div className="summary__total__value">
-                {USCurrencyFormat.format(total)}
-              </div>
-            </div>
-          </section>
-          */}
+          <Cart
+            features={FEATURES}
+            selected={this.state.selected}
+            handleUpdate={this.state.updateFeature}
+          />
         </main>
       </div>
     );
