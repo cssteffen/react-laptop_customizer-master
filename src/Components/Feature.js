@@ -15,11 +15,10 @@ const USCurrencyFormat = new Intl.NumberFormat("en-US", {
 
 export default function Feature(props) {
   //render() {
-  //const { features, selected, featureTitle, handleUpdate } = props;
-
-  const features = Object.keys(this.prop.features).map((feature, idx) => {
+  console.log(feature);
+  const features = Object.keys(props.features).map((feature, idx) => {
     const featureHash = feature + "-" + idx;
-    const options = this.props.features[feature].map(item => {
+    const options = props.features[feature].map(item => {
       const itemHash = slugify(JSON.stringify(item));
       return (
         <div key={itemHash} className="feature__item">
@@ -28,7 +27,7 @@ export default function Feature(props) {
             id={itemHash}
             className="feature__option"
             name={slugify(feature)}
-            checked={item.name === this.state.selected[feature].name}
+            checked={item.name === this.prop.selected[feature].name}
             onChange={e => this.updateFeature(feature, item)}
           />
           <label htmlFor={itemHash} className="feature__label">

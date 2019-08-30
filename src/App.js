@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import Form from "./Components/Form";
 import FEATURES from "./Components/Store";
-//import { FEATURES } from "./Components/Store";
 
 class App extends Component {
   constructor(props) {
