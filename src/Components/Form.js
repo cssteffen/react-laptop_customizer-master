@@ -1,4 +1,26 @@
 import React from "react";
+import Feature from "./Feature";
+
+/* ================= FORM ================== */
+
+export default class FORM extends React.Component {
+  render() {
+    console.log(this.props.features);
+    console.log(this.props.selected);
+
+    return (
+      <form className="main__form">
+        <h2>Customize your laptop</h2>
+        <Feature features={this.props.features} />
+        FeatureList
+      </form>
+    );
+  }
+}
+
+/* ================= MY OLD CODE ================== 
+
+import React from "react";
 import FeatureItem from "./FeatureItem";
 //import Feature from "./Feature";
 import "./Form";
@@ -19,6 +41,7 @@ export default class Form extends React.Component {
         handleUpdate={this.updateFeature}
       />
     ));
+
     return (
       <div>
         <h2>Customize your laptop</h2>
@@ -31,3 +54,4 @@ export default class Form extends React.Component {
 //Form.defaultProps = {
 //  features: []
 //};
+*/

@@ -1,3 +1,5 @@
+/* ================= MY OLD CODE ================== 
+
 import React from "react";
 import "./FeatureItem.css";
 import slugify from "slugify";
@@ -5,32 +7,29 @@ import slugify from "slugify";
 export default class FeatureItem extends React.Component {
   constructor(props) {
     super(props);
-    //featureName, selected, handleUpdate;
   }
 
-  /*
-          featureName={item}
-        options={this.props.features[item]}
-        idx={idx}
-        selected={this.props.selected}
-        handleUpdate={this.props.handleUpdate}
-  */
   render() {
-    //const { featureName, selected, handleUpdate } = props;
-
     const USCurrencyFormat = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD"
     });
-    //const features = Object.keys(this.props).map((feature, idx) => {
-    //const featureHash = feature + "-" + idx;
-    //const options = this.props.features[feature].map(item => {
-    // const itemHash = slugify(JSON.stringify(item));
-    //)}
+
     const options = this.props.options.map((option, idx) => {
       const itemHash = slugify(JSON.stringify(option.name));
-      //console.log(onChange);
-      //(option, idx)
+      const selectedOption = this.props.selected[option.name];
+
+      console.log("==Options==");
+      console.log(options);
+      console.log("== featureName: ==");
+      console.log(this.props.featureName);
+      console.log("== option.name ==");
+      console.log(option.name);
+      console.log("== option.checked ==");
+      console.log(option.checked);
+      console.log("== selectedOption ==");
+      console.log(selectedOption);
+
       return (
         <div key={this.props.idx} className="feature__item">
           <input
@@ -38,7 +37,7 @@ export default class FeatureItem extends React.Component {
             id={itemHash}
             className="feature_option"
             name={this.props.featureName}
-            checked={option.name === this.props.selected[this.props.option]}
+            checked={option.name === selectedOption}
             onChange={e => this.updateFeature}
           ></input>
           <label htmlFor={itemHash} className="feature__label">
@@ -48,21 +47,7 @@ export default class FeatureItem extends React.Component {
       );
     });
 
-    //});
     return (
-      /*<div key={itemHash} className="feature__item">
-       <input
-          type="radio"
-          //id={ItemHash}
-          className="feature_option"
-          name={slugify(feature)}
-          checked={item.name === this.props.selected[this.props.feature].name}
-          onChange={e => this.updateFeature(feature, item)}
-        ></input>
-        <label htmlFor="insertItemHash" className="feature__label">
-          {item.name} ({USCurrencyFormat.format(item.cost)})
-        </label>
-    </div> */
       <div>
         <fieldset className="feature" key={this.props.idx}>
           <legend className="feature__name">
@@ -72,43 +57,7 @@ export default class FeatureItem extends React.Component {
         {options}
       </div>
     );
-    //});
-    // });
+
   }
 }
-
-/*
-const features = Object.keys(this.props.features).map((feature, idx) => {
-  const featureHash = feature + "-" + idx;
-  const options = this.props.features[feature].map(item => {
-    const itemHash = slugify(JSON.stringify(item));
-
-    /* ====== FEATURE ITEM ======= 
-    return (
-      <div key={itemHash} className="feature__item">
-        <input
-          type="radio"
-          id={itemHash}
-          className="feature__option"
-          name={slugify(feature)}
-          checked={item.name === this.state.selected[feature].name}
-          onChange={e => this.updateFeature(feature, item)}
-        />
-        <label htmlFor={itemHash} className="feature__label">
-          {item.name} ({USCurrencyFormat.format(item.cost)})
-        </label>
-      </div>
-    );
-  });
-
-  /* ====== FEATURE ======= 
-  return (
-    <fieldset className="feature" key={featureHash}>
-      <legend className="feature__name">
-        <h3>{feature}</h3>
-      </legend>
-      {options}
-    </fieldset>
-  );
-});
 */

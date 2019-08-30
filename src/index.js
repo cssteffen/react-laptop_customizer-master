@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-//import { features } from "./Components/Store";
+//import FEATURES from "./Components/Store";
 /*
 const FEATURES = {
   Processor: [
@@ -47,4 +47,5 @@ const FEATURES = {
   ]
 };
 */
+
 ReactDOM.render(<App />, document.getElementById("root"));
