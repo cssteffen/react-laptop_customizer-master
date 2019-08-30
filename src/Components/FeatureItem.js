@@ -5,8 +5,19 @@ import slugify from "slugify";
 export default class FeatureItem extends React.Component {
   constructor(props) {
     super(props);
+    //featureName, selected, handleUpdate;
   }
+
+  /*
+          featureName={item}
+        options={this.props.features[item]}
+        idx={idx}
+        selected={this.props.selected}
+        handleUpdate={this.props.handleUpdate}
+  */
   render() {
+    //const { featureName, selected, handleUpdate } = props;
+
     const USCurrencyFormat = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD"
@@ -27,10 +38,8 @@ export default class FeatureItem extends React.Component {
             id={itemHash}
             className="feature_option"
             name={this.props.featureName}
-            checked={
-              option.name === this.props.selected[this.props.option].name
-            }
-            //onChange={e => this.props.updateFeature(option, idx)}
+            checked={option.name === this.props.selected[this.props.option]}
+            onChange={e => this.props.updateFeature(option, idx)}
           ></input>
           <label htmlFor={itemHash} className="feature__label">
             {option.name} ({USCurrencyFormat.format(option.cost)})
@@ -55,7 +64,7 @@ export default class FeatureItem extends React.Component {
         </label>
     </div> */
       <div>
-        <fieldset className="feature" key="insertFeatureHash">
+        <fieldset className="feature" key={this.props.idx}>
           <legend className="feature__name">
             <h3>{this.props.featureName}</h3>
           </legend>
