@@ -7,12 +7,16 @@ export default class FORM extends React.Component {
   render() {
     console.log(this.props.features);
     console.log(this.props.selected);
+    //console.log(features);
 
     return (
       <form className="main__form">
         <h2>Customize your laptop</h2>
-        <Feature features={this.props.features} />
-        FeatureList
+        <Feature
+          features={this.props.features}
+          selected={this.props.selected}
+          handleUpdate={this.updateFeature}
+        />
       </form>
     );
   }
