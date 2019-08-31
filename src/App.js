@@ -49,13 +49,10 @@ class App extends Component {
           <Form
             features={FEATURES}
             selected={this.state.selected}
-            handleUpdate={this.state.updateFeature}
+            handleUpdate={this.updateFeature}
+            //handleUpdate={this.updateFeature}
           />
-          <Cart
-            features={FEATURES}
-            selected={this.state.selected}
-            handleUpdate={this.state.updateFeature}
-          />
+          <Cart features={FEATURES} selected={this.state.selected} />
         </main>
       </div>
     );

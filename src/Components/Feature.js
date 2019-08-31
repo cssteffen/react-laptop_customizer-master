@@ -15,6 +15,9 @@ const USCurrencyFormat = new Intl.NumberFormat("en-US", {
 
 export default function Feature(props) {
   //render() {
+  //console.log(props.features.options.onChange);
+  console.log(props);
+  //handleUpdate={selected => this.updateFeature(selected)}
 
   const features = Object.keys(props.features).map((feature, idx) => {
     const featureHash = feature + "-" + idx;
@@ -28,8 +31,7 @@ export default function Feature(props) {
             className="feature__option"
             name={slugify(feature)}
             checked={item.name === props.selected[feature].name}
-            onChange={e => props.updateFeature}
-            //handleUpdate={props.updateFeature}
+            onChange={() => props.updateFeature(feature, item)}
           />
           <label htmlFor={itemHash} className="feature__label">
             {item.name} ({USCurrencyFormat.format(item.cost)})
