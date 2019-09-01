@@ -12,7 +12,7 @@ export default class Options extends React.Component {
             className="feature__option"
             name={slugify(feature)}
             checked={item.name === this.state.selected[feature].name}
-            onChange={e => this.updateFeature(feature, item)}
+            onChange={e => props.handleUpdate}
           />
           <label htmlFor={itemHash} className="feature__label">
             {item.name} ({USCurrencyFormat.format(item.cost)})

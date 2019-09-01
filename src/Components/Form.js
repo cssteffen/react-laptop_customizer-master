@@ -7,7 +7,7 @@ export default class FORM extends React.Component {
   render() {
     console.log(this.props.features);
     console.log(this.props.selected);
-    console.log(this.updateFeature);
+    console.log(this.props.handleUpdate);
 
     console.log(this.props);
 
@@ -17,7 +17,7 @@ export default class FORM extends React.Component {
         <Feature
           features={this.props.features}
           selected={this.props.selected}
-          handleUpdate={this.props.updateFeature}
+          handleUpdate={this.props.handleUpdate}
         />
       </form>
     );
