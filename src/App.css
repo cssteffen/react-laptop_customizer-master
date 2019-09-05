@@ -88,6 +88,7 @@ while keeping them available to the keyboard */
 
 .feature__option:checked + .feature__label {
   border: 0.2rem solid #0070c9;
+  background-color: rgb(235, 244, 255);
 }
 
 .feature__option:focus + .feature__label {

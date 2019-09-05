@@ -14,10 +14,7 @@ const USCurrencyFormat = new Intl.NumberFormat("en-US", {
 });
 
 export default function Feature(props) {
-  //render() {
-  //console.log(props.features.options.onChange);
   console.log(props);
-  //handleUpdate={selected => this.updateFeature(selected)}
 
   const features = Object.keys(props.features).map((feature, idx) => {
     const featureHash = feature + "-" + idx;
@@ -49,24 +46,5 @@ export default function Feature(props) {
       </fieldset>
     );
   });
-  // }
   return features;
 }
-
-/* ================= MY OLD CODE ================== 
-
-import React from "react";
-import "./Feature.css";
-
-function Feature(props) {
-  return (
-    <fieldset className="feature" key="insertFeatureHash">
-      <legend className="feature__name">
-        <h3>{this.props.feature}</h3>
-      </legend>
-    </fieldset>
-  );
-}
-
-export default Feature;
-*/
